@@ -29,7 +29,7 @@ void loop()
 {
   int i;
   long x, y, z;
-  long threshold = 150; // 振ったことを検出するしきい値
+  long threshold = 180; // 振ったことを検出するしきい値
 
   // 50回センサ値を読み込んで平均を算出
   x = y = z = 0;
@@ -46,7 +46,7 @@ void loop()
   int rotateY = calcRotate(y);
   int rotateZ = calcRotate(z);
 
-  // printLog(rotateX, rotateY, rotateZ);
+  printLog(rotateX, rotateY, rotateZ);
 
   if (rotateX > threshold || rotateY > threshold || rotateZ > threshold) {
     digitalWrite(LED_PIN, HIGH);
